@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SQL Operation</title>
+        <style>
+            .content {
+              margin: auto;
+              width: 40%;
+              border: 2px solid #140614;
+              padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+                <h1 style="text-align: center"><i>SQL Operation</i></h1><br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Show Databases</i></h3>
+                    <form action="/showdb" method="POST">
+                        <input type="submit" value="Show Databases">
+                    </form>
+                </div><br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Show Tables</i></h3>
+                    <form action="/showtable" method="POST">
+                        <label><b>Enter the Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <input type="submit" value="Show Tables">
+                    </form>
+                </div> <br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Create Database</i></h3>
+                    <form action="/createdb" method="POST">
+                        <label><b>Enter the New Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <input type="submit" value="Create Database">
+                    </form>
+                </div><br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Create Table</i></h3>
+                    <form action="/createtable" method="POST">
+                        <label><b>Enter the Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <label><b>Enter the New Table Name:</b></label> <input type="text" name="table" id="table" ><br><br>
+                        <label><b>Enter the Column Name in the Prescribed Format: </b></label><br>
+                        <textarea id="columns" name="columns" rows="4" cols="89" onclick="this.select()">column1 int, column2 varchar(255), column3 float(5,3)</textarea><br><br>
+                        <input type="submit" value="Create Table">
+                    </form>
+                </div><br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Select Query</i></h3>
+                    <form action="/select" method="POST">
+                        <label><b>Enter the New Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <label><b>Enter the Table Name:</b></label> <input type="text" name="table" id="table" ><br><br>
+                        <textarea id="query" name="query" rows="4" cols="89" onclick="this.select();">Enter the Query Here:(Please do not put spaces between columns)...</textarea><br><br>
+                        <input type="submit" value="Find Result">
+                    </form>
+                </div><br>
+            </div>
+        </div>
+    </body>
+</html>

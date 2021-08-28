@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SQL Operation</title>
+        <style>
+            .content {
+              margin: auto;
+              width: 40%;
+              border: 2px solid #140614;
+              padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center"><i>SQL Operation</i></h1><br>
+            <div class="content">
+                {{ message }}
+                <table cellspacing="15">
+                    <thead>
+                        {% for columns in all_columns %}
+                            {% for column in columns %}
+                                <td>{{  column  }}</td>
+                            {% endfor %}
+                        {% endfor %}
+                    </thead>
+                    <tbody>
+                        {% for result in results %}
+                        <tr>
+                            {% for res in result %}
+                                <td>{{  res  }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </body>
+</html>
