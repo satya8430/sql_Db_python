@@ -75,3 +75,12 @@ class SqlDbManagement:
             return cursor.fetchall()
         except Exception as e:
             raise Exception(f"(fetchAllColumnsList): failed to fetch all columns\n" + str(e))
+
+    def insertDataIntoTable(self, db_name, table_name, columns, values):
+        try:
+            myDb = self.getSqlConnection()
+            cursor = myDb.cursor()
+            cursor.execute("use " + db_name)
+            cursor.execute("INSERT INTO "+ table_name + columns + " VALUES("+ values +")")
+        except Exception as e:
+            raise Exception(f"(insertDataIntoTable): failed to insert data into table\n" + str(e))

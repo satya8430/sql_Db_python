@@ -58,6 +58,16 @@ def selectQuery():
   results = sqlOperation.selectQuery(db_name, query)
   return render_template('results.html', results=results, all_columns=all_columns)
 
+@app.route("/insert", methods=['GET','POST'])
+def insertIntoTable():
+  sqlOperation = SqlDbManagement(username="root", password="Satya007")
+  db_name = request.form['db']
+  table_name = request.form['table']
+  columns = request.form['columns']
+  values = request.form['values']
+  sqlOperation.insertDataIntoTable(db_name, table_name, columns, values)
+  return render_template('results.html', message="Data Inserted into Table")
+
 
 if __name__ == "__main__":
   app.run()

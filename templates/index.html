@@ -48,10 +48,20 @@
                 <div class="content">
                     <h3 style="text-align: center"><i>Select Query</i></h3>
                     <form action="/select" method="POST">
-                        <label><b>Enter the New Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <label><b>Enter the Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
                         <label><b>Enter the Table Name:</b></label> <input type="text" name="table" id="table" ><br><br>
                         <textarea id="query" name="query" rows="4" cols="89" onclick="this.select();">Enter the Query Here:(Please do not put spaces between columns)...</textarea><br><br>
                         <input type="submit" value="Find Result">
+                    </form>
+                </div><br>
+                <div class="content">
+                    <h3 style="text-align: center"><i>Insert Data Into Table</i></h3>
+                    <form action="/insert" method="POST">
+                        <label><b>Enter the Database Name:</b></label> <input type="text" name="db" id="db" ><br><br>
+                        <label><b>Enter the Table Name:</b></label> <input type="text" name="table" id="table" ><br><br>
+                        <textarea id="columns" name="columns" rows="4" cols="89" onclick="this.select();">Enter the columns...</textarea><br><br>
+                        <textarea id="values" name="values" rows="4" cols="89" onclick="this.select();">Enter the Values...</textarea><br><br>
+                        <input type="submit" value="Insert Data">
                     </form>
                 </div><br>
             </div>
